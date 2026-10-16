@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coyo-Cut | Video Editing Portfolio</title>
+<meta name="description" content="Coyo-Cut is an independent video editing portfolio showcasing gaming edits, cinematic storytelling, short-form content, and creative video projects.">
+<meta property="og:title" content="Coyo-Cut | Video Editing Portfolio">
+<meta property="og:description" content="Independent video editing portfolio: gaming edits, cinematic storytelling, short-form content.">
+<!-- EDIT: replace with your hosted share image URL (1200x630) -->
+<meta property="og:image" content="https://example.com/coyo-cut-share.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0B10'/%3E%3Cpath d='M8 9h10l6 7-6 7H8z' fill='none' stroke='%239B6DFF' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpath d='M14 16h8' stroke='%239B6DFF' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0B10;--bg2:#12121A;--card:#181822;--p:#9B6DFF;--p2:#7047D7;--tx:#F5F3FA;--tx2:#A5A2B3;--bd:#292633;--hf:'Space Grotesk',system-ui,sans-serif;--bf:'Inter',system-ui,sans-serif;box-sizing:border-box;color-scheme:dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 1rem/1.65 var(--bf);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--hf);line-height:1.05;margin:0;letter-spacing:-.02em;text-transform:uppercase}
+a{color:inherit}
+img,video{max-width:100%}
+:focus-visible{outline:2px solid var(--p);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+section{padding:96px 0;position:relative}
+.eyebrow{font:500 .75rem var(--hf);letter-spacing:.2em;color:var(--p);text-transform:uppercase;margin-bottom:16px;display:block}
+h2{font-size:clamp(2rem,5vw,3.4rem);max-width:16ch}
+.lead{color:var(--tx2);max-width:56ch;margin:18px 0 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 .8rem var(--hf);letter-spacing:.12em;text-transform:uppercase;padding:14px 26px;border-radius:999px;border:1px solid var(--bd);background:transparent;color:var(--tx);text-decoration:none;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s,border-color .25s}
+.btn:hover{transform:translateY(-2px);border-color:var(--p)}
+.btn.pri{background:linear-gradient(135deg,var(--p),var(--p2));border-color:transparent;color:#fff}
+.btn.pri:hover{box-shadow:0 8px 30px rgba(155,109,255,.35)}
+.btn.sm{padding:10px 18px;font-size:.7rem}
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.sc,header.open{background:rgba(11,11,16,.88);backdrop-filter:blur(12px);border-color:var(--bd)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font:700 1.05rem var(--hf);letter-spacing:.14em;text-decoration:none}
+.logo svg{width:26px;height:26px}
+.links{display:flex;align-items:center;gap:30px}
+.links a:not(.btn){font-size:.88rem;color:var(--tx2);text-decoration:none;transition:color .2s}
+.links a:not(.btn):hover,.links a.act{color:var(--p)}
+.burger{display:none;background:none;border:1px solid var(--bd);color:var(--tx);border-radius:10px;width:44px;height:44px;cursor:pointer}
+@media(max-width:860px){.burger{display:block}.links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 20px;background:rgba(11,11,16,.97);border-bottom:1px solid var(--bd);display:none}header.open .links{display:flex}.links a:not(.btn){padding:14px 0;border-bottom:1px solid var(--bd)}.links .btn{margin-top:14px}}
+/* hero */
+#home{min-height:100svh;display:flex;align-items:center;padding:120px 0 80px;background:radial-gradient(ellipse 70% 55% at 75% 25%,rgba(112,71,215,.32),transparent 70%),radial-gradient(ellipse 50% 40% at 10% 90%,rgba(155,109,255,.1),transparent 70%),var(--bg);overflow:hidden}
+#home video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}
+.frame{position:absolute;inset:92px 20px 70px;pointer-events:none;border:1px solid rgba(255,255,255,.05)}
+.frame i{position:absolute;width:22px;height:22px;border:2px solid var(--p);opacity:.7}
+.frame i:nth-child(1){top:-1px;left:-1px;border-right:0;border-bottom:0}.frame i:nth-child(2){top:-1px;right:-1px;border-left:0;border-bottom:0}.frame i:nth-child(3){bottom:-1px;left:-1px;border-right:0;border-top:0}.frame i:nth-child(4){bottom:-1px;right:-1px;border-left:0;border-top:0}
+#home .wrap{position:relative}
+h1{font-size:clamp(2.8rem,9.5vw,7rem);font-weight:700;line-height:.95}
+h1 em{font-style:normal;color:var(--p)}
+.hero-p{color:var(--tx2);font-size:clamp(1rem,2vw,1.2rem);max-width:52ch;margin:28px 0 36px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.scroll{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);width:22px;height:36px;border:1.5px solid var(--tx2);border-radius:12px;opacity:.6}
+.scroll::after{content:"";position:absolute;top:6px;left:50%;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--p);animation:dot 1.8s infinite}
+@keyframes dot{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+/* showreel */
+#reel{background:var(--bg2)}
+.player{margin-top:44px;aspect-ratio:16/9;border:1px solid var(--bd);border-radius:20px;overflow:hidden;background:var(--card);position:relative;box-shadow:0 0 80px rgba(112,71,215,.14)}
+.player video{width:100%;height:100%;object-fit:contain;background:#000;display:block}
+.ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;background:linear-gradient(135deg,#1c1830,#12121A 60%,#221a3d);color:var(--tx2);font-size:.9rem}
+.ph b{display:block;font:700 .8rem var(--hf);letter-spacing:.18em;color:var(--p);margin-top:10px}
+.play{width:78px;height:78px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;cursor:pointer;display:grid;place-items:center;box-shadow:0 0 0 10px rgba(155,109,255,.15),0 10px 40px rgba(112,71,215,.5);transition:transform .25s}
+.play:hover{transform:scale(1.08)}
+.play svg{width:28px;height:28px;margin-left:4px}
+.poster{position:absolute;inset:0;display:grid;place-items:center;background-size:cover;background-position:center}
+/* work */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:24px;margin-top:48px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;overflow:hidden;cursor:pointer;text-align:left;color:inherit;padding:0;font:inherit;transition:transform .3s,border-color .3s,box-shadow .3s;display:block;width:100%}
+.card:hover,.card:focus-visible{transform:translateY(-5px);border-color:var(--p2);box-shadow:0 12px 40px rgba(112,71,215,.2)}
+.thumb{aspect-ratio:16/10;overflow:hidden;position:relative;background:#1c1830}
+.thumb .ti{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
+.card:hover .ti{transform:scale(1.07)}
+.thumb .ph{font-size:.7rem;letter-spacing:.2em}
+.thumb .vw{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(11,11,16,.55);font:700 .75rem var(--hf);letter-spacing:.18em;opacity:0;transition:opacity .3s}
+.card:hover .vw,.card:focus-visible .vw{opacity:1}
+.cb{padding:20px 22px 24px}
+.cat{font:500 .7rem var(--hf);letter-spacing:.16em;color:var(--p);text-transform:uppercase}
+.cb h3{font-size:1.25rem;margin:8px 0}
+.cb p{color:var(--tx2);font-size:.92rem;margin:0}
+/* modal */
+dialog{background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:20px;padding:0;width:min(860px,100% - 28px);max-height:calc(100dvh - 40px);overflow:auto;box-shadow:0 0 90px rgba(112,71,215,.3)}
+dialog::backdrop{background:rgba(5,5,9,.82);backdrop-filter:blur(4px)}
+.mb{padding:clamp(20px,4vw,36px)}
+.x{position:sticky;top:0;float:right;margin:12px 12px 0 0;width:40px;height:40px;border-radius:50%;border:1px solid var(--bd);background:var(--bg);color:var(--tx);cursor:pointer;font-size:1.2rem;z-index:2}
+.mv{aspect-ratio:16/9;position:relative;border-radius:14px;overflow:hidden;background:#000;margin:14px 0 22px}
+.mv video{width:100%;height:100%;object-fit:contain}
+dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px 28px;margin:0}
+dt{font:500 .7rem var(--hf);letter-spacing:.16em;color:var(--p);text-transform:uppercase}
+dd{margin:4px 0 0;color:var(--tx2);font-size:.92rem}
+.tos h3{font-size:1rem;margin:22px 0 6px;letter-spacing:.04em}.tos p{color:var(--tx2);margin:0;font-size:.92rem}
+mark{background:rgba(155,109,255,.18);color:var(--p);padding:0 4px;border-radius:4px}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px;margin-top:48px}
+.sc2{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:28px;transition:border-color .3s,transform .3s}
+.sc2:hover{border-color:var(--p2);transform:translateY(-4px)}
+.sc2 svg{width:34px;height:34px;stroke:var(--p);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-bottom:20px}
+.sc2 small{font:500 .7rem var(--hf);letter-spacing:.16em;color:var(--tx2)}
+.sc2 h3{font-size:1.1rem;margin:6px 0 10px}.sc2 p{color:var(--tx2);margin:0;font-size:.92rem}
+.note{color:var(--tx2);font-size:.8rem;margin-top:22px}
+/* about */
+#about{background:var(--bg2)}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+@media(max-width:860px){.two{grid-template-columns:1fr;gap:36px}}
+.about p{color:var(--tx2)}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0}
+.tag{border:1px solid var(--bd);border-radius:8px;padding:8px 14px;font:500 .72rem var(--hf);letter-spacing:.14em;background:var(--card)}
+.pr{display:grid;gap:16px;margin-top:8px}.pr div{border-left:2px solid var(--p2);padding-left:16px}
+.pr b{font:700 .8rem var(--hf);letter-spacing:.12em;display:block}.pr span{color:var(--tx2);font-size:.9rem}
+.tl{border:1px solid var(--bd);border-radius:20px;background:var(--card);padding:22px;box-shadow:0 0 70px rgba(112,71,215,.12)}
+.tl .tr{height:26px;border-radius:6px;margin:10px 0;background:rgba(255,255,255,.04);position:relative;overflow:hidden}
+.tl .tr i{position:absolute;top:3px;bottom:3px;border-radius:4px;background:linear-gradient(90deg,var(--p2),var(--p));opacity:.75}
+.tl .tr.b i{background:rgba(255,255,255,.18)}
+.tl small{display:block;color:var(--tx2);font-size:.72rem;margin-top:14px;text-align:center}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:56px;position:relative}
+.steps::before{content:"";position:absolute;top:19px;left:5%;right:5%;height:1px;background:var(--bd)}
+.st{position:relative}
+.st b{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--bg);border:1px solid var(--p);color:var(--p);font:700 .8rem var(--hf);position:relative}
+.st h3{font-size:1rem;margin:16px 0 6px}.st p{color:var(--tx2);font-size:.88rem;margin:0}
+@media(max-width:860px){.steps{grid-template-columns:1fr;gap:28px;padding-left:4px}.steps::before{top:0;bottom:0;left:23px;right:auto;width:1px;height:auto}.st{padding-left:60px}.st b{position:absolute;left:0;top:0}.st h3{margin-top:6px}}
+/* contact */
+#contact{background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(112,71,215,.28),transparent 70%),var(--bg);border-top:1px solid var(--bd)}
+#contact h2{font-size:clamp(2.2rem,7vw,5rem);max-width:none}
+form{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:18px;background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:clamp(20px,4vw,36px)}
+.f{display:flex;flex-direction:column;gap:6px}.f.full{grid-column:1/-1}
+@media(max-width:640px){form{grid-template-columns:1fr}}
+label{font-size:.82rem;font-weight:500}label small{color:var(--tx2);font-weight:400}
+input,select,textarea{width:100%;background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:12px 14px;font:inherit;transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--p);box-shadow:0 0 0 3px rgba(155,109,255,.2)}
+[aria-invalid=true]{border-color:#ff7a90}
+.err{color:#ff8da1;font-size:.78rem;min-height:1em}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--tx2)}.chk input{width:auto;margin-top:4px}
+#status{padding:14px 16px;border-radius:10px;font-size:.9rem;display:none}
+#status.ok{display:block;background:rgba(80,200,140,.12);border:1px solid rgba(80,200,140,.4)}
+#status.bad{display:block;background:rgba(255,122,144,.1);border:1px solid rgba(255,122,144,.4)}
+#status.warn{display:block;background:rgba(155,109,255,.12);border:1px solid var(--p2)}
+.cl{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:28px;color:var(--tx2);font-size:.9rem}
+/* footer */
+footer{border-top:1px solid var(--bd);padding:44px 0 36px;background:var(--bg)}
+.fr{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px}
+.fr p{margin:6px 0 0;color:var(--tx2);font-size:.85rem}
+.fl{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:flex-start;font-size:.85rem}
+.fl a,.fl button{color:var(--tx2);text-decoration:none;background:none;border:0;font:inherit;cursor:pointer;padding:0}.fl a:hover,.fl button:hover{color:var(--p)}
+.fb{margin-top:32px;padding-top:20px;border-top:1px solid var(--bd);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;color:var(--tx2);font-size:.78rem}
+.fb span:last-child{letter-spacing:.2em;color:var(--p);font-family:var(--hf)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header id="hd"><div class="wrap nav">
+  <a class="logo" href="#home" aria-label="Coyo-Cut home"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 7h14l8 9-8 9H5z" fill="none" stroke="#9B6DFF" stroke-width="2.4" stroke-linejoin="round"/><path d="M12 16h12" stroke="#F5F3FA" stroke-width="2.4"/></svg>COYO-CUT</a>
+  <button class="burger" id="bg" aria-label="Toggle menu" aria-expanded="false" aria-controls="lk">☰</button>
+  <nav class="links" id="lk" aria-label="Primary">
+    <a href="#home">Home</a><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+    <a class="btn pri sm" href="#contact">Start a project</a>
+  </nav>
+</div></header>
+
+<main>
+<section id="home">
+  <!-- EDIT: set src to a short muted showreel loop to use it as the hero background -->
+  <video id="heroVid" muted loop playsinline preload="none" aria-hidden="true" hidden></video>
+  <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <span class="eyebrow">Independent Video Editor · Creative Post-Production</span>
+    <h1>Your <em>vision.</em><br>My edit.<br>One <em>final cut.</em></h1>
+    <p class="hero-p">I turn raw footage into polished, engaging visual stories through creative editing, thoughtful pacing, and sound design.</p>
+    <div class="cta"><a class="btn pri" href="#work">Explore my work</a><a class="btn" href="#contact">Let’s work together</a></div>
+  </div>
+  <div class="scroll" aria-hidden="true"></div>
+</section>
+
+<section id="reel"><div class="wrap">
+  <span class="eyebrow">Showreel</span>
+  <h2 class="rv">The work speaks.</h2>
+  <p class="lead rv">A selection of edits, experiments, and creative projects that showcase my approach to video.</p>
+  <div class="player rv" id="player"></div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <span class="eyebrow">Portfolio</span>
+  <h2 class="rv">Selected work</h2>
+  <p class="lead rv">Different styles. Different stories. One focus on the final result.</p>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="services" style="background:var(--bg2)"><div class="wrap">
+  <span class="eyebrow">Services</span>
+  <h2 class="rv">What I can bring to the frame.</h2>
+  <p class="lead rv">From fast-paced edits to cinematic storytelling, every project gets an approach tailored to its purpose.</p>
+  <div class="svc">
+    <div class="sc2 rv"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg><small>SERVICE 01</small><h3>Video editing</h3><p>Clean cuts, thoughtful pacing, transitions, audio balancing, and polished final exports.</p></div>
+    <div class="sc2 rv"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 10v5M4.5 12.5h5M15.5 11.5h.01M18 14h.01"/></svg><small>SERVICE 02</small><h3>Gaming &amp; entertainment</h3><p>Gaming montages, gameplay highlights, creator videos, and engaging entertainment edits.</p></div>
+    <div class="sc2 rv"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><small>SERVICE 03</small><h3>Short-form content</h3><p>Short, engaging videos for social platforms, including vertical edits, highlights, and promotional content.</p></div>
+    <div class="sc2 rv"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2zM2 9h20M7 5l-3 4M13 5l-3 4M19 5l-3 4"/></svg><small>SERVICE 04</small><h3>Cinematic storytelling</h3><p>Atmospheric sequences, music synchronisation, sound design, colour adjustments, and visual storytelling.</p></div>
+  </div>
+  <p class="note">Recording and footage capture can be discussed as an add-on where appropriate for the project. Service availability and deliverables are agreed individually. No fixed pricing is listed.</p>
+  <p style="margin-top:24px"><a class="btn pri" href="#contact">Request a quote</a></p>
+</div></section>
+
+<section id="about"><div class="wrap two">
+  <div class="about">
+    <span class="eyebrow">About</span>
+    <h2 class="rv">Behind the cut.</h2>
+    <p style="margin-top:24px">I’m a video editor who enjoys transforming raw footage into engaging visual experiences.</p>
+    <p>My approach combines creative editing, timing, sound, and attention to detail to create videos that feel cohesive and purposeful.</p>
+    <p>I value clear communication, organised workflows, and realistic deadlines just as much as the editing itself.</p>
+    <p>Whether it’s a gaming montage, a cinematic sequence, or a completely new creative project, my goal is to understand the vision and deliver work that reflects it.</p>
+    <div class="tags"><span class="tag">VN VIDEO EDITOR</span><span class="tag">ADOBE PREMIERE PRO</span></div>
+    <div class="pr">
+      <div><b>01 — CLEAR COMMUNICATION</b><span>Understanding the brief and keeping expectations clear.</span></div>
+      <div><b>02 — CREATIVE PRECISION</b><span>Paying attention to pacing, sound, transitions, and the details that make an edit work.</span></div>
+      <div><b>03 — RELIABLE DELIVERY</b><span>Organised workflows and realistic deadlines agreed upon before a project begins.</span></div>
+    </div>
+  </div>
+  <!-- EDIT: replace this abstract timeline with your own timeline screenshot if you like -->
+  <div class="tl" role="img" aria-label="Abstract illustration of a video editing timeline">
+    <div class="tr"><i style="left:4%;width:30%"></i><i style="left:38%;width:18%"></i><i style="left:60%;width:34%"></i></div>
+    <div class="tr"><i style="left:12%;width:22%"></i><i style="left:42%;width:40%"></i></div>
+    <div class="tr b"><i style="left:0;width:96%"></i></div>
+    <div class="tr b"><i style="left:8%;width:50%"></i><i style="left:64%;width:28%"></i></div>
+    <small>Abstract timeline · replace with your own screenshot</small>
+  </div>
+</div></section>
+
+<section id="process"><div class="wrap">
+  <span class="eyebrow">Process</span>
+  <h2 class="rv">From idea to final cut.</h2>
+  <div class="steps">
+    <div class="st rv"><b>01</b><h3>Discuss</h3><p>Share the idea, intended style, footage, and requirements.</p></div>
+    <div class="st rv"><b>02</b><h3>Plan</h3><p>Agree on the scope, price, deliverables, and deadline.</p></div>
+    <div class="st rv"><b>03</b><h3>Edit</h3><p>The video is edited according to the agreed brief.</p></div>
+    <div class="st rv"><b>04</b><h3>Refine</h3><p>Review the preview and work through the included revision rounds.</p></div>
+    <div class="st rv"><b>05</b><h3>Deliver</h3><p>Receive the completed video in the agreed format.</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <span class="eyebrow">Contact</span>
+  <h2>Have something in mind?</h2>
+  <p class="lead">Got an idea, a project, or a concept you’d like to bring to life? Tell me about it, and let’s discuss the possibilities.</p>
+  <form id="form" novalidate>
+    <div class="f"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required><span class="err" id="e-name"></span></div>
+    <div class="f"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required><span class="err" id="e-email"></span></div>
+    <div class="f"><label for="type">Project type</label><select id="type" name="type" required><option value="">Select…</option><option>Gaming montage / highlights</option><option>Cinematic edit</option><option>Short-form / social</option><option>General video editing</option><option>Other</option></select><span class="err" id="e-type"></span></div>
+    <div class="f"><label for="len">Estimated video length</label><input id="len" name="length" placeholder="e.g. 60 seconds, 5 minutes" required><span class="err" id="e-len"></span></div>
+    <div class="f"><label for="dl">Preferred deadline</label><input id="dl" name="deadline" type="date" required><span class="err" id="e-dl"></span></div>
+    <div class="f"><label for="bud">Budget range <small>(optional)</small></label><input id="bud" name="budget" placeholder="Optional"></div>
+    <div class="f full"><label for="desc">Project description</label><textarea id="desc" name="description" rows="5" required></textarea><span class="err" id="e-desc"></span></div>
+    <div class="f full"><label for="ref">Reference links <small>(optional)</small></label><input id="ref" name="references" placeholder="Links to footage or inspiration"></div>
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+    <div class="f full"><label class="chk"><input type="checkbox" id="consent" required><span>I agree that my details will be used only to respond to this enquiry. See the <a href="#" data-doc="privacy">privacy notice</a>.</span></label><span class="err" id="e-consent"></span></div>
+    <div class="f full"><div id="status" role="status" aria-live="polite"></div></div>
+    <div class="f full"><button class="btn pri" type="submit" id="send">Send project enquiry</button></div>
+  </form>
+  <div class="cl">
+    <!-- EDIT: replace with your professional email -->
+    <span>Email: <a href="mailto:planetshiv01@gmail.com">planetshiv01@gmail.com</a></span>
+    <!-- EDIT: add a professional profile URL, or delete this line -->
+    <span>Profile: <mark>add link (optional)</mark></span>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fr">
+    <div><a class="logo" href="#home">COYO-CUT</a><p>Independent Video Editor</p></div>
+    <div class="fl">
+      <a href="#home">Home</a><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <button data-doc="tos">Terms of Service</button><button data-doc="privacy">Privacy Policy</button>
+    </div>
+  </div>
+  <div class="fb"><span>© <span id="yr"></span> Coyo-Cut. All rights reserved.</span><span>CRAFTED FRAME BY FRAME.</span></div>
+</div></footer>
+
+<dialog id="dlg" aria-label="Details"><button class="x" id="dx" aria-label="Close">✕</button><div class="mb" id="dbody"></div></dialog>
+
+<script>
+/* ============ OWNER CONFIG — edit this block ============ */
+// Hero background loop (muted, short). Leave "" for the static background.
+const HERO_VIDEO = "";
+// Showreel: set src to a hosted .mp4/.webm; poster is an optional image URL.
+const SHOWREEL = { src: "", poster: "" };
+// Contact form endpoint (e.g. a Formspree/Basin URL that accepts JSON POST). Leave "" until connected.
+const FORM_ENDPOINT = "";
+// Projects: set visible:false to hide. video = hosted file, embed = YouTube/Vimeo embed URL, link = external page.
+// yt(id) builds the YouTube embed + external link. Titles marked with a trailing "?" in comments are guesses — rename freely.
+const yt=id=>({embed:"https://www.youtube-nocookie.com/embed/"+id+"?rel=0",link:"https://www.youtube.com/watch?v="+id});
+const T="[Add project overview]",Q="[Add editing techniques used]",S="[Add software used]",C="[Describe your specific contribution]";
+const PROJECTS = [
+ {visible:true,title:"CaseOh – Spooky Time",category:"Gaming & Entertainment",desc:"A fan-made music video edit built around the track and the streamer’s moments.",thumb:"",video:"",...yt("IhYfn9tzA4A"),overview:T,techniques:Q,software:S,contribution:C},
+ {visible:true,title:"Mystical Legends – Holiday Trailer",category:"Cinematic Storytelling",desc:"A holiday trailer for the Roblox creature-taming game Mystical Legends.",thumb:"",video:"",...yt("aWCQ4bg4BO4"),overview:T,techniques:Q,software:S,contribution:"I recorded the shots for this trailer."},
+ {visible:true,title:"How to Survive a CaseOh Attack",category:"Gaming & Entertainment",desc:"A fast-paced comedy edit styled as a mock survival guide.",thumb:"",video:"",...yt("GopViduVthw"),overview:T,techniques:Q,software:S,contribution:C},
+ {visible:true,title:"How to (Maybe) Survive a Bison Attack",category:"Creative Projects",desc:"A short mock survival-guide edit with a playful tone.",thumb:"",video:"",...yt("sAoIZ2maTJA"),overview:T,techniques:Q,software:S,contribution:C},
+ {visible:true,title:"How to (Maybe) Survive Getting Followed",category:"Creative Projects",desc:"A short mock survival-guide edit built around comic timing.",thumb:"",video:"",...yt("OcpyEnN-qqU"),overview:T,techniques:Q,software:S,contribution:C},
+ {visible:true,title:"Short-Form Edit",category:"Social Media",desc:"A concise video designed for a vertical, short-form viewing experience.",thumb:"",video:"",...yt("EtKth_V31lQ"),overview:T,techniques:Q,software:S,contribution:C},
+ {visible:true,title:"Creative Edit",category:"Social Media",desc:"Another short-form edit from the portfolio.",thumb:"",video:"",...yt("YeWT7Yj_FjI"),overview:T,techniques:Q,software:S,contribution:C},
+ {visible:true,title:"Short-Form Sequencing",category:"Social Media",desc:"A short-form video where I handled the sequencing of the clips.",thumb:"",video:"",...yt("ezyi0JnTPWI"),overview:T,techniques:Q,software:S,contribution:"I did the sequencing for this video."}
+];
+// Legal text lives here so it is easy to update. Highlighted [brackets] need YOUR decision.
+// This is a template only — it has not been legally reviewed.
+const DOCS = {
+ // Format: s = [heading, text]. In text, "\n" starts a new line and lines beginning with "• " become bullets. [Brackets] are highlighted as to-dos.
+ tos:{title:"Terms of Service",note:"Video Editing Commissions · Last updated: October 2026",
+  intro:"Welcome! Thank you for considering me for your video editing needs. Before commissioning a project, please read the following Terms of Service carefully. By placing an order, you agree to the terms outlined below.",
+  outro:"Thank you for your interest in my work! I look forward to creating something amazing with you. 💜",
+  s:[
+  ["01 — General terms","• I reserve the right to decline any project at my discretion.\n• Clients must provide clear instructions, references, and all necessary assets before editing begins.\n• All communication regarding a commission should take place through the agreed-upon communication channel.\n• Clients are expected to remain respectful and professional throughout the process.\n• These terms may be updated when necessary. The terms agreed upon when a commission is confirmed will generally apply to that project."],
+  ["02 — Services provided","My services may include:\n• Video editing and assembly.\n• Transitions, effects, and motion graphics.\n• Color correction and visual adjustments.\n• Sound design, audio synchronization, and music integration.\n• Subtitles, captions, and text animations.\n• Social media edits and short-form content.\n• Gaming videos, montages, promotional videos, and other agreed-upon projects.\nThe exact services included will depend on the commission agreement."],
+  ["03 — Pricing & payment","• Prices are determined by the project’s complexity, length, requirements, and turnaround time.\n• A final quote will be provided before work begins.\n• Any additional work outside the original agreement may incur extra charges.\n• Payment arrangements, including any deposit or upfront payment, will be confirmed before the project starts.\n• Work will not begin until the agreed initial payment requirements have been met.\n• Final, unwatermarked exports may be withheld until the agreed payment has been completed.\n• Any applicable additional fees will be communicated to the client beforehand."],
+  ["04 — Revisions & changes","• Each commission includes [INSERT NUMBER] rounds of revisions.\n• A revision is a reasonable adjustment to the existing edit that follows the original brief.\n• Major changes to the concept, style, footage, or overall direction after editing has begun may incur additional charges.\n• Revisions caused by my failure to follow the agreed brief will be corrected without an additional revision fee.\n• Clients should provide clear, consolidated feedback whenever possible.\nPlease review drafts carefully before approving the final version."],
+  ["05 — Delivery & turnaround","• Estimated delivery times will be discussed and agreed upon before work begins.\n• Delivery times may vary depending on project complexity, workload, and client responsiveness.\n• Delays caused by missing assets, late feedback, or significant changes to the brief may affect the delivery date.\n• If an unexpected delay occurs on my end, I will communicate it to the client as soon as reasonably possible.\n• Final files will be delivered in the agreed format and resolution.\nUrgent or rush commissions may be subject to additional fees, provided these are agreed upon in advance."],
+  ["06 — Cancellations & refunds","• Clients may request cancellation before work begins.\n• Once editing has started, refunds will be assessed based on the work completed, payments made, and any applicable legal requirements.\n• Completed work is generally not eligible for a refund solely because the client changes their mind or dislikes a result that follows the approved brief.\n• If I am unable to complete a project, I will communicate with the client and arrange an appropriate resolution, which may include a refund for the uncompleted portion.\n• Any non-refundable deposits must be clearly communicated and agreed upon before payment.\nNothing in this section overrides any refund rights or other protections required by applicable law."],
+  ["07 — Client responsibilities","Clients agree to:\n• Provide footage, images, audio, logos, and other required assets in a usable format.\n• Ensure that they have permission to use any materials they supply.\n• Provide accurate instructions and respond to requests for clarification.\n• Review drafts and provide feedback within a reasonable timeframe.\n• Avoid requesting work that infringes copyright, violates privacy, or is otherwise unlawful.\nI am not responsible for delays caused by incomplete, corrupted, or unusable client-provided files."],
+  ["08 — Copyright & usage rights","• Clients retain ownership of the original materials they own or have the right to use.\n• Unless otherwise agreed in writing, the client receives permission to use the completed, paid-for final video for the purposes agreed upon during the commission.\n• I retain ownership of my original editing techniques, reusable templates, and pre-existing creative assets, subject to any third-party rights.\n• Third-party music, footage, fonts, plugins, and other licensed assets remain subject to their respective licences.\n• Clients are responsible for ensuring that their intended use of delivered content complies with applicable third-party licensing requirements.\n• Ownership transfers, exclusive rights, or broader commercial usage rights must be agreed upon separately in writing."],
+  ["09 — Portfolio & showcase rights","I may wish to display selected completed projects in my editing portfolio, showreel, or social media accounts to demonstrate my work.\n• I will seek the client’s permission before publicly showcasing commissioned work unless showcase rights have already been explicitly agreed upon.\n• Clients may request confidentiality before a project begins.\n• Confidential projects will not be publicly displayed without the necessary permission.\n• Private footage and sensitive information will be treated respectfully."],
+  ["10 — Project files & source materials","• Standard commissions include the final exported video only, unless otherwise agreed.\n• Editable project files, timelines, presets, custom assets, and working files are not automatically included.\n• Project files may be provided for an additional fee, subject to technical limitations and applicable third-party licences.\n• I cannot guarantee that a project will open identically on another device or editing setup."],
+  ["11 — Communication & professional conduct","• Respectful communication is expected from both parties.\n• Harassment, abusive behaviour, threats, or repeated unreasonable demands may result in a project being paused or cancelled.\n• Clients should communicate important changes as early as possible.\n• I will make reasonable efforts to communicate progress and address concerns throughout the project."],
+  ["12 — Limitation of responsibility","I will make reasonable efforts to deliver work that meets the agreed requirements. However, I cannot guarantee specific view counts, engagement, revenue, audience growth, or performance on social media platforms.\nI am not responsible for platform compression, copyright claims arising from materials or uses outside my control, or technical issues caused by third-party services.\nAny limitation of responsibility is subject to applicable law."],
+  ["13 — Acceptance of terms","By commissioning a video editing project, submitting payment, or otherwise confirming an order, the client acknowledges that they have read and agreed to these Terms of Service.\nFor clarification or questions regarding these terms, please contact me before placing an order."]]},
+ privacy:{title:"Privacy Policy",note:"Draft filler text · Last updated: October 2026. Review and adjust it to match how you actually handle data.",
+  intro:"This policy explains what personal information is collected through the Coyo-Cut website and how it is used. I aim to collect as little as possible.",
+  s:[
+  ["01 — What I collect","When you send a project enquiry, I receive only what you enter in the form:\n• Your name and email address.\n• Project details: type, estimated length, preferred deadline, optional budget, description, and optional reference links.\nI do not ask for payment details, passwords, or other sensitive information through this form. Please don’t include any in your message."],
+  ["02 — How I use it","• To reply to your enquiry and discuss your project.\n• To prepare a quote and agree scope, deliverables, and deadlines.\nI do not sell your information, and I do not use it for unrelated marketing."],
+  ["03 — Who handles it","Enquiries are delivered to me by email through a form-handling service. [Name the form provider once connected, and mention any analytics tools if you add them.] Your information may pass through that provider only to deliver the message to me."],
+  ["04 — How long I keep it","I keep enquiry details only as long as needed to respond and, if we work together, to manage the commission. [Set a retention period, e.g. delete unsuccessful enquiries after 12 months.]"],
+  ["05 — Files and footage","Footage and materials you share for a commission are used only for that project and treated as private. See the Terms of Service for portfolio and confidentiality arrangements."],
+  ["06 — Cookies and tracking","This website does not use advertising cookies or trackers. [Update this section if you add analytics or embedded video that sets cookies.]"],
+  ["07 — Your rights","You can ask to see, correct, or delete the personal information I hold about you. Depending on where you live, you may have additional rights under local law."],
+  ["08 — Contact","For any privacy question or request, email planetshiv01@gmail.com."]]}
+};
+/* ============ END CONFIG ============ */
+
+const $=(s,r=document)=>r.querySelector(s);
+const esc=t=>String(t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl=u=>/^https?:\/\//i.test(u)?u:"";
+$("#yr").textContent=new Date().getFullYear();
+
+// header
+const hd=$("#hd"),bg=$("#bg");
+addEventListener("scroll",()=>hd.classList.toggle("sc",scrollY>30),{passive:true});
+bg.onclick=()=>{const o=hd.classList.toggle("open");bg.setAttribute("aria-expanded",o);bg.textContent=o?"✕":"☰"};
+document.querySelectorAll(".links a").forEach(a=>a.addEventListener("click",()=>{hd.classList.remove("open");bg.setAttribute("aria-expanded","false");bg.textContent="☰"}));
+const secs=[...document.querySelectorAll("main section")].filter(s=>$(`.links a[href="#${s.id}"]`));
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){document.querySelectorAll(".links a").forEach(a=>a.classList.toggle("act",a.getAttribute("href")==="#"+e.target.id))}}),{rootMargin:"-45% 0px -50% 0px"}).observe&&secs.forEach(s=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)document.querySelectorAll(".links a").forEach(a=>a.classList.toggle("act",a.getAttribute("href")==="#"+s.id))}),{rootMargin:"-45% 0px -50% 0px"}).observe(s));
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+const reveal=()=>document.querySelectorAll(".rv:not(.in)").forEach(el=>io.observe(el));
+
+// hero video
+if(HERO_VIDEO){const v=$("#heroVid");v.src=HERO_VIDEO;v.hidden=false;if(!matchMedia("(prefers-reduced-motion:reduce)").matches){v.preload="metadata";v.play().catch(()=>{})}}
+
+// showreel
+(function(){
+ const p=$("#player");
+ if(!SHOWREEL.src){p.innerHTML='<div class="ph"><div><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9B6DFF" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m10 9 5 3-5 3z"/></svg><b>SHOWREEL PLACEHOLDER</b><div style="margin-top:8px">Add your video in the SHOWREEL setting.</div></div></div>';return}
+ const bgi=SHOWREEL.poster?`style="background-image:url('${esc(SHOWREEL.poster)}')"`:'style="background:linear-gradient(135deg,#1c1830,#221a3d)"';
+ p.innerHTML=`<div class="poster" ${bgi}><button class="play" aria-label="Play showreel"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg></button></div>`;
+ $(".play",p).onclick=()=>{p.innerHTML=`<video controls autoplay playsinline preload="metadata" src="${esc(SHOWREEL.src)}"${SHOWREEL.poster?` poster="${esc(SHOWREEL.poster)}"`:""}></video>`};
+})();
+
+// projects
+const dlg=$("#dlg"),dbody=$("#dbody");let lastFocus;
+function thumb(p){return p.thumb?`<div class="ti" style="background-image:url('${esc(p.thumb)}')" role="img" aria-label="${esc(p.title)} thumbnail"></div>`:`<div class="ph"><div>THUMBNAIL<br>PLACEHOLDER</div></div>`}
+const vis=PROJECTS.filter(p=>p.visible);
+$("#grid").innerHTML=vis.map((p,i)=>`<button class="card rv" data-i="${i}" aria-label="View project: ${esc(p.title)}"><div class="thumb">${thumb(p)}<div class="vw">▶ VIEW PROJECT</div></div><div class="cb"><span class="cat">${esc(p.category)}</span><h3>${String(i+1).padStart(2,"0")} — ${esc(p.title)}</h3><p>${esc(p.desc)}</p></div></button>`).join("");
+$("#grid").addEventListener("click",e=>{const c=e.target.closest(".card");if(c)openProject(vis[c.dataset.i],c)});
+function openProject(p,trigger){
+ let media;
+ if(p.video)media=`<video controls preload="none" playsinline src="${esc(p.video)}"${p.thumb?` poster="${esc(p.thumb)}"`:""}></video>`;
+ else if(safeUrl(p.embed))media=`<iframe src="${esc(p.embed)}" title="${esc(p.title)}" loading="lazy" allowfullscreen style="width:100%;height:100%;border:0"></iframe>`;
+ else media=`<div class="ph"><div>VIDEO PLACEHOLDER<b>ADD A VIDEO SOURCE</b></div></div>`;
+ const ext=safeUrl(p.link)?`<p style="margin:18px 0 0"><a class="btn sm" href="${esc(p.link)}" target="_blank" rel="noopener noreferrer">Watch externally ↗</a></p>`:"";
+ const ph=t=>/^\[/.test(t)?`<mark>${esc(t)}</mark>`:esc(t);
+ dbody.innerHTML=`<span class="cat">${esc(p.category)}</span><h2 style="font-size:clamp(1.6rem,4vw,2.4rem);margin:8px 0 0;max-width:none">${esc(p.title)}</h2><div class="mv">${media}</div><dl><div><dt>Overview</dt><dd>${ph(p.overview)}</dd></div><div><dt>Editing techniques</dt><dd>${ph(p.techniques)}</dd></div><div><dt>Software</dt><dd>${ph(p.software)}</dd></div><div><dt>My contribution</dt><dd>${ph(p.contribution)}</dd></div></dl>${ext}`;
+ show(trigger);
+}
+function show(t){lastFocus=t;dlg.showModal();dlg.scrollTop=0}
+function closeDlg(){dlg.close();dbody.innerHTML=""}
+$("#dx").onclick=closeDlg;
+dlg.addEventListener("click",e=>{if(e.target===dlg)closeDlg()});
+dlg.addEventListener("close",()=>{dbody.innerHTML="";lastFocus&&lastFocus.focus&&lastFocus.focus()});
+
+// legal docs
+document.addEventListener("click",e=>{
+ const b=e.target.closest("[data-doc]");if(!b)return;e.preventDefault();
+ const d=DOCS[b.dataset.doc];
+ const mk=t=>esc(t).replace(/\[([^\]]+)\]/g,"<mark>[$1]</mark>");
+ const body=t=>{let h="",ul=false;t.split("\n").forEach(l=>{if(l.startsWith("• ")){if(!ul){h+='<ul style="margin:6px 0;padding-left:20px;color:var(--tx2);font-size:.92rem">';ul=true}h+=`<li>${mk(l.slice(2))}</li>`}else{if(ul){h+="</ul>";ul=false}h+=`<p style="margin-top:8px">${mk(l)}</p>`}});return h+(ul?"</ul>":"")};
+ dbody.innerHTML=`<div class="tos"><span class="eyebrow">Legal</span><h2 style="font-size:2rem;max-width:none">${esc(d.title)}</h2><p style="margin-top:12px"><mark>${esc(d.note)}</mark></p>${d.intro?`<p style="margin-top:16px">${mk(d.intro)}</p>`:""}${d.s.map(s=>`<h3>${esc(s[0])}</h3>${body(s[1])}`).join("")}${d.outro?`<p style="margin-top:26px">${mk(d.outro)}</p>`:""}</div>`;
+ show(b);
+});
+
+// form
+const form=$("#form"),st=$("#status");
+const rules=[["name","e-name","Please enter your name."],["email","e-email","Please enter a valid email address."],["type","e-type","Please choose a project type."],["len","e-len","Please estimate the video length."],["dl","e-dl","Please choose a preferred deadline."],["desc","e-desc","Please describe your project."]];
+function validate(){
+ let first=null;
+ rules.forEach(([id,eid,msg])=>{const el=$("#"+id),ok=el.value.trim()&&el.checkValidity();el.setAttribute("aria-invalid",!ok);el.setAttribute("aria-describedby",eid);$("#"+eid).textContent=ok?"":msg;if(!ok&&!first)first=el});
+ const c=$("#consent"),cok=c.checked;$("#e-consent").textContent=cok?"":"Please accept to continue.";if(!cok&&!first)first=c;
+ if(first)first.focus();return !first;
+}
+form.addEventListener("submit",async e=>{
+ e.preventDefault();st.className="";st.textContent="";
+ if(!validate())return;
+ if(!FORM_ENDPOINT){st.className="warn";st.textContent="This form isn’t connected yet, so nothing has been sent. The site owner needs to set FORM_ENDPOINT. Please email directly in the meantime.";return}
+ if(form.elements._gotcha.value)return;
+ const btn=$("#send");btn.disabled=true;btn.textContent="Sending…";
+ try{
+  const data=Object.fromEntries(new FormData(form));delete data._gotcha;
+  const r=await fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(data)});
+  if(!r.ok)throw new Error(r.status);
+  form.reset();st.className="ok";st.textContent="Thank you — your enquiry has been sent. I’ll get back to you soon.";
+ }catch(err){st.className="bad";st.textContent="Sorry, your enquiry could not be sent. Please try again or email directly."}
+ finally{btn.disabled=false;btn.textContent="Send project enquiry"}
+});
+form.addEventListener("input",e=>{if(e.target.getAttribute("aria-invalid")==="true"){e.target.setAttribute("aria-invalid","false")}});
+$("#dl").min=new Date().toISOString().slice(0,10);
+reveal();
+</script>
+</body>
+</html>
